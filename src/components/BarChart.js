@@ -5,11 +5,11 @@ import "./Chart.css";
 
 function BarChart() {
   const data = {
-    labels: ["", "", "", "", "", ""],
+    labels: ["", "", "", "", "", "", ""],
     datasets: [
       {
         label: "",
-        data: [2, 5, 4, 3, 4.5, 3.5],
+        data: [2, 5, 4, 3, 4.5, 5.5, 3.5],
         backgroundColor: ["#8757ED"],
         borderWidth: 0,
         barThickness: 20,
