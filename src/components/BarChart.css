@@ -1,0 +1,68 @@
+body {
+  background-color: #f3f6f9;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#chart-container {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.3rem;
+  width: 25rem;
+  height: 25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.small-text {
+  font-size: 1rem;
+  color: gray;
+}
+.large-text {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.fancy-text {
+  background-color: #01D9D9;
+  border-radius: 0.2rem;
+  color: white;
+  margin-left: 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+#heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+  margin-top: 1rem;
+
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+#chart {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
