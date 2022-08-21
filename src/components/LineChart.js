@@ -3,71 +3,93 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import "./Chart.css";
 
-const yPoints = [10, 13.5, 17, 20.5, 24];
-const data = {
-  labels: ["Apr 03", "Apr 04", "Apr 05", "Apr 06", "Apr 07", "Apr 08", "Apr 09", "Apr 10", "Apr 11", "Apr 12", "Apr 13", "Apr 15", "Apr 16", "Apr 16", ""],
-  datasets: [
-    {
-      label: "",
-      data: [18, 18, 20, 20, 17.5, 17.5, 22, 22, 20, 20, 18, 18, 20, 20, 22],
-      backgroundColor: "#01D9D9",
-      borderColor: "#01D9D9",
-      borderWidth: 2.5,
-      tension: 0.2,
-      pointRadius: 0,
-    },
-  ],
-};
-
-const options = {
-  scales: {
-    x: {
-      borderWidth: 0,
-      grid: {
-        display: false,
-      },
-      ticks: {
-        callback: (value, index, values) => {
-          if(index === 1 || index === 4 || index === 7 || index === 10 || index === 13) {
-            return data.labels[index]
-          }
-        }
-      }
-    },
-    y: {
-      grid: {
-        drawTicks: false,
-        borderWidth: 0,
-        borderDash: [5, 5]
-      },
-      min: 10,
-      max: 24,
-      ticks: {
-        count: 5,
-        stepSize: 3.5,
-        callback: (value, index, values) => {
-          return "$" + value;
-        }
-      }
-    }
-  },
-  plugins: {
-    legend: {
-      display: false,
-    },
-  },
-};
-
 function LineChart() {
   const chartRef = useRef();
-  console.dir(chartRef);
+  const [gradient, setGradient] = useState("rgba(255, 255, 255, 0)");
 
   useEffect(() => {
-    const gradientBg = chartRef.current.ctx.createLinearGradient(0, 0, 0, 200);
-    console.log("GRADIENT:", gradientBg);
-    gradientBg.addColorStop(0, "#01D9D9");
-    gradientBg.addColorStop(0.5, "white");
-  }, []);
+    let gradient = chartRef.current.ctx.createLinearGradient(0, 0, 0, 200);
+    gradient.addColorStop(0, "rgba(1, 217, 217, 0.4)");
+    gradient.addColorStop(0.6, "rgba(255, 255, 255, 0.4)");
+    setGradient(gradient);
+  }, [])
+
+  const data = {
+    labels: [
+      "Apr 03",
+      "Apr 04",
+      "Apr 05",
+      "Apr 06",
+      "Apr 07",
+      "Apr 08",
+      "Apr 09",
+      "Apr 10",
+      "Apr 11",
+      "Apr 12",
+      "Apr 13",
+      "Apr 15",
+      "Apr 16",
+      "Apr 16",
+      "",
+    ],
+    datasets: [
+      {
+        label: "",
+        data: [18, 18, 20, 20, 17.5, 17.5, 22, 22, 20, 20, 18, 18, 20, 20, 22],
+        backgroundColor: gradient,
+        borderColor: "rgba(1, 217, 217, 1)",
+        borderWidth: 2.5,
+        tension: 0.2,
+        pointRadius: 0,
+        fill: true,
+      },
+    ],
+  };
+
+  const options = {
+    scales: {
+      x: {
+        borderWidth: 0,
+        grid: {
+          display: false,
+        },
+        ticks: {
+          callback: (value, index, values) => {
+            if (
+              index === 1 ||
+              index === 4 ||
+              index === 7 ||
+              index === 10 ||
+              index === 13
+            ) {
+              return data.labels[index];
+            }
+          },
+        },
+      },
+      y: {
+        grid: {
+          drawTicks: false,
+          borderWidth: 0,
+          borderDash: [5, 5],
+        },
+        min: 10,
+        max: 24,
+        ticks: {
+          count: 5,
+          stepSize: 3.5,
+          callback: (value, index, values) => {
+            return "$" + value;
+          },
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
 
   return (
     <div id="container">
@@ -86,7 +108,11 @@ function LineChart() {
           </div>
         </div>
         <div id="chart">
-          <Line ref={chartRef} data={data} options={options} />
+          <Line
+            ref={chartRef}
+            data={data}
+            options={options}
+          />
         </div>
         <div></div>
       </div>
