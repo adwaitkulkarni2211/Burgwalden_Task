@@ -14,7 +14,7 @@ body {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0.3rem;
   width: 25rem;
-  height: 25rem;
+  height: 27rem;
 
   display: flex;
   flex-direction: column;
@@ -44,6 +44,8 @@ body {
   border-radius: 0.2rem;
   color: white;
   margin-left: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
 }
@@ -65,4 +67,17 @@ body {
 #chart {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+#main-title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#sub-title {
+  margin-bottom: 2rem;
+}
+
+.dollar {
+  margin-top: 0.7rem;
 }

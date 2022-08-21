@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
-import "./BarChart.css";
+import "./Chart.css";
 
 function BarChart() {
   const data = {
@@ -40,7 +40,7 @@ function BarChart() {
       <div id="chart-container">
         <div id="title">
           <div id="main-title">
-            <span className="small-text">$</span>
+            <span className="small-text dollar">$</span>
             <span className="large-text">2,420</span>
             <span className="fancy-text">^2.6%</span>
           </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
-import "./BarChart.css";
+import "./Chart.css";
 
 const yPoints = [10, 13.5, 17, 20.5, 24];
 const data = {
@@ -78,7 +78,7 @@ function LineChart() {
         </div>
         <div id="title">
           <div id="main-title">
-            <span className="small-text">$</span>
+            <span className="small-text dollar">$</span>
             <span className="large-text">14094</span>
           </div>
           <div id="sub-title" className="small-text">
@@ -88,6 +88,7 @@ function LineChart() {
         <div id="chart">
           <Line ref={chartRef} data={data} options={options} />
         </div>
+        <div></div>
       </div>
     </div>
   );
