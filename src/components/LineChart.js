@@ -16,6 +16,7 @@ function LineChart() {
 
   const data = {
     labels: [
+      "Apr 02",
       "Apr 03",
       "Apr 04",
       "Apr 05",
@@ -27,15 +28,18 @@ function LineChart() {
       "Apr 11",
       "Apr 12",
       "Apr 13",
+      "Apr 14",
       "Apr 15",
       "Apr 16",
-      "Apr 16",
-      "",
+      "Apr 17",
+      "Apr 18",
+      "Apr 19",
+      "Apr 20"
     ],
     datasets: [
       {
         label: "",
-        data: [18, 18, 20, 20, 17.5, 17.5, 22, 22, 20, 20, 18, 18, 20, 20, 22],
+        data: [18, 18, 20, 20, 17.5, 17.5, 22, 22, 20, 20, 18, 18, 20, 20, 18, 18, 20, 20, 22],
         backgroundColor: gradient,
         borderColor: "rgba(1, 217, 217, 1)",
         borderWidth: 2.5,
@@ -56,11 +60,11 @@ function LineChart() {
         ticks: {
           callback: (value, index, values) => {
             if (
-              index === 1 ||
-              index === 4 ||
-              index === 7 ||
-              index === 10 ||
-              index === 13
+              index === 2 ||
+              index === 5 ||
+              index === 8 ||
+              index === 11 ||
+              index === 14
             ) {
               return data.labels[index];
             }
